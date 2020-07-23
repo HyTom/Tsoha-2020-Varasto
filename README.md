@@ -16,5 +16,6 @@ Kuvitteellisen yrityksen sovellus jossa pidetään yllä tietoa siitä, mitä ta
 * Sovellus on tietenkin tarkoitettu vain työntekijöille, joten sivuun tulee voida kirjautua.
 * Kaikkia sivubisneksiä ei työntekijöiden tarvitse tietää, joten tietyt tunnukset eivät näe kaikkia tuotteita.
 * Tieto tavaroiden lisäyksistä, poistoista ja liikkeistä olisi hyvä tallentaa omaan tauluun.
+* Historiasta voisi myös katsoa, kuka käyttäjä muutoksen on tehnyt.
 
 
