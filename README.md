@@ -6,6 +6,11 @@ Tsoha-2020 loppukesän tietokantasovellus harjoitustyö
 Kuvitteellisen yrityksen sovellus jossa pidetään yllä tietoa siitä, mitä tavaraa yrityksellä löytyy varastosta ja mistä sen voisi löytää.
 
 
+# Välipalautus 2 tilanne
+Tuli ongelmia PostgreSQL:n kanssa ja vaihdoin windowsiin, vieläkin ongelmia mutta ainakin toimii.
+Ohjelma vielä vasta rakentuu, kun koitan saada asioita toimimaan. 
+Valitettavasti Heroku testausta ei vielä voi tehdä.
+
 ## Ominaisuuksia:
 * Voi etsiä tavaraa.
 * Voi lisätä ja poistaa tavaraa.
