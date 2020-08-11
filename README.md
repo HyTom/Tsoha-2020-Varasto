@@ -9,9 +9,8 @@ Kuvitteellisen yrityksen sovellus jossa pidetään yllä tietoa siitä, mitä ta
 # Välipalautus 2 tilanne
 Tuli ongelmia PostgreSQL:n kanssa ja vaihdoin windowsiin, vieläkin ongelmia mutta ainakin toimii.
 Ohjelma vielä vasta rakentuu, kun koitan saada asioita toimimaan. 
-Valitettavasti Heroku testausta ei vielä voi tehdä.
-
-## Ominaisuuksia:
+Valitettavasti Heroku testausta ei vielä voi tehdä.+
+/## Ominaisuuksia:
 * Voi etsiä tavaraa.
 * Voi lisätä ja poistaa tavaraa.
 * Voi katsoa missä hyllyssä ja varastossa tavara sijaitsee.
@@ -22,5 +21,3 @@ Valitettavasti Heroku testausta ei vielä voi tehdä.
 * Kaikkia sivubisneksiä ei työntekijöiden tarvitse tietää, joten tietyt tunnukset eivät näe kaikkia tuotteita.
 * Tieto tavaroiden lisäyksistä, poistoista ja liikkeistä olisi hyvä tallentaa omaan tauluun.
 * Historiasta voisi myös katsoa, kuka käyttäjä muutoksen on tehnyt.
-
-
