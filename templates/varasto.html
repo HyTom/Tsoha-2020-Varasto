@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<a href="/">
+<img src="../static/images/logo.png" alt="Paras työpaikka">
+</a>
 
 Viestien määrä: {{ count }}
 <hr>
@@ -6,3 +10,4 @@ Viestien määrä: {{ count }}
 <hr>
 {% endfor %}
 <a href="/new">Lähetä viesti</a>
+<a href="/">Etusivulle</a>
