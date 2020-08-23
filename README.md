@@ -19,7 +19,7 @@ Paljon tuli sählättyä mutta ainakin sovellus toimii.
 Käyttäjillä ei ole vielä eroja ja tuotteita ei ole vielä missään varastossa nje.
 Nyt alan työntämään sisään niin paljon tauluja ja ominaisuuksia kuin pystyn.
 
-/## Ominaisuuksia:
+## Ominaisuuksia:
 * Voi etsiä tavaraa.
 * Voi lisätä ja poistaa tavaraa.
 * Voi katsoa missä hyllyssä ja varastossa tavara sijaitsee.
