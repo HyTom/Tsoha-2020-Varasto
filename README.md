@@ -5,11 +5,20 @@ Tsoha-2020 loppukesän tietokantasovellus harjoitustyö
 
 Kuvitteellisen yrityksen sovellus jossa pidetään yllä tietoa siitä, mitä tavaraa yrityksellä löytyy varastosta ja mistä sen voisi löytää.
 
+Varasto on yksityisyrittäjälle tarkoitettu sovellus, joten käyttäjää ei voi luoda.
+Alla testausta varten tunnukset.
 
-# Välipalautus 2 tilanne
-Tuli ongelmia PostgreSQL:n kanssa ja vaihdoin windowsiin, vieläkin ongelmia mutta ainakin toimii.
-Ohjelma vielä vasta rakentuu, kun koitan saada asioita toimimaan. 
-Valitettavasti Heroku testausta ei vielä voi tehdä.+
+Tunnus: asd
+Salasana: asd
+
+Linkki: https://tsoha-varasto.herokuapp.com/
+
+
+# Välipalautus 3 tilanne
+Paljon tuli sählättyä mutta ainakin sovellus toimii.
+Käyttäjillä ei ole vielä eroja ja tuotteita ei ole vielä missään varastossa nje.
+Nyt alan työntämään sisään niin paljon tauluja ja ominaisuuksia kuin pystyn.
+
 /## Ominaisuuksia:
 * Voi etsiä tavaraa.
 * Voi lisätä ja poistaa tavaraa.

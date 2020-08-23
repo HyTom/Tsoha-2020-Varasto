@@ -3,11 +3,16 @@
 <img src="../static/images/logo.png" alt="Paras työpaikka">
 </a>
 
-Viestien määrä: {{ count }}
+Erilaisia tavararoita: {{ count }}
 <hr>
-{% for message in messages %}
-{{ message[0] }}
+
+{% for tavara in tavara %}
+{{ tavara[1] }} , varastossa {{ tavara[2] }}kpl
 <hr>
 {% endfor %}
-<a href="/new">Lähetä viesti</a>
+
+<a href="/taydennys">Täydennä varastoa</a>
+<p> - </p>
+<a href="/new">Kokonaan uusi tuote</a>
+<p> - </p>
 <a href="/">Etusivulle</a>

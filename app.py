@@ -17,33 +17,38 @@ def etusivu():
      
 @app.route("/varasto")
 def varasto():
-    result = db.session.execute("SELECT COUNT(*) FROM messages")
+    result = db.session.execute("SELECT COUNT(*) FROM tavaratesti")
     count = result.fetchone()[0]
-    result = db.session.execute("SELECT content FROM messages")
-    messages = result.fetchall()
-    return render_template("varasto.html", count=count, messages=messages) 
+    result = db.session.execute("SELECT * FROM tavaratesti")
+    tavara = result.fetchall()
+    
+    return render_template("varasto.html", count=count, tavara=tavara) 
     
 @app.route("/login",methods=["POST"])
 def login():
     username = request.form["username"]
     password = request.form["password"]
+    
     sql = "SELECT password FROM users WHERE username=:username"
     result = db.session.execute(sql, {"username":username})
     user = result.fetchone()
-    hash_value = generate_password_hash(password)
-    sql = "INSERT INTO users (username,password) VALUES (:username,:password)"
-    db.session.execute(sql, {"username":username,"password":hash_value})
-    db.session.commit()
     if user == None:
-        redirect("/")
+        return redirect("/loginerror")
     else:
         hash_value = user[0]
         if check_password_hash(hash_value,password):
             session["username"] = username
         else:
-            redirect("/")
+            return redirect("/loginerror")
     return redirect("/")
+    
+@app.route("/loginerror")
+def loginerror():
+    return render_template("loginerror.html") 
 
+@app.route("/taydennys")
+def taydennys():
+     return render_template("taydennys.html")
 
 @app.route("/logout")
 def logout():
@@ -56,9 +61,9 @@ def new():
     
 @app.route("/send", methods=["POST"])
 def send():
-    content = request.form["content"]
-    sql = "INSERT INTO messages (content) VALUES (:content)"
-    db.session.execute(sql, {"content":content})
+    tavara = request.form["tavara"]
+    sql = "INSERT INTO tavaratesti (nimi, maara) VALUES (:tavara, '0')"
+    db.session.execute(sql, {"tavara":tavara})
     db.session.commit()
     return redirect("/varasto")
 
