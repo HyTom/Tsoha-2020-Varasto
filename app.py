@@ -3,6 +3,7 @@ from flask import Flask
 from flask import redirect, render_template, request, session, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from os import getenv
+from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -15,7 +16,7 @@ def etusivu():
      return render_template("index.html")
      
 @app.route("/varasto")
-def index():
+def varasto():
     result = db.session.execute("SELECT COUNT(*) FROM messages")
     count = result.fetchone()[0]
     result = db.session.execute("SELECT content FROM messages")
@@ -26,8 +27,21 @@ def index():
 def login():
     username = request.form["username"]
     password = request.form["password"]
-    # TODO: check username and password
-    session["username"] = username
+    sql = "SELECT password FROM users WHERE username=:username"
+    result = db.session.execute(sql, {"username":username})
+    user = result.fetchone()
+    hash_value = generate_password_hash(password)
+    sql = "INSERT INTO users (username,password) VALUES (:username,:password)"
+    db.session.execute(sql, {"username":username,"password":hash_value})
+    db.session.commit()
+    if user == None:
+        redirect("/")
+    else:
+        hash_value = user[0]
+        if check_password_hash(hash_value,password):
+            session["username"] = username
+        else:
+            redirect("/")
     return redirect("/")
 
 
