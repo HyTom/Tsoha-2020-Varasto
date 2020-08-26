@@ -1,1 +1,24 @@
-OMINAISUUS VIELÄ KESKEN
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<a href="/">
+<img src="../static/images/logo.png" alt="Paras työpaikka">
+</a>
+
+<p> Valitse tuote: </p>
+
+{% for tavara in tavara %}
+<form action="/tilaus" method="POST">
+Tuote: {{ tavara[1] }}
+<p></p>
+Varastossa: {{ tavara[2] }}kpl<br>
+<label for="quantity">Tilauksen maara (1 - 9999):</label>
+<input type="number" id="quantity" name="quantity" min="1" max="9999">
+<input type="hidden" id="tavaraid" name="tavaraid" value={{ tavara[0] }}>
+<input type="submit" value="Tilaa täydennys">
+</form>
+<hr>
+{% endfor %}
+
+<p> - </p>
+<a href="/varasto">Takaisin</a>
+<p> - </p>
+<a href="/">Etusivulle</a>
