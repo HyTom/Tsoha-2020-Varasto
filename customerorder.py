@@ -4,7 +4,7 @@ from flask import redirect, render_template, request, session, send_from_directo
 
 @app.route("/customerorders")
 def customerorders():
-    result = db.session.execute("SELECT Customer.CustomerID, Customer.name, COUNT(CustomerOrder.CustomerID) FROM Customer INNER JOIN CustomerOrder ON CustomerOrder.CustomerID=Customer.CustomerID WHERE Customer.visible=1 GROUP BY Customer.CustomerID")
+    result = db.session.execute("SELECT Customer.CustomerID, Customer.name, COUNT(CustomerOrder.CustomerID) FROM Customer INNER JOIN CustomerOrder ON CustomerOrder.CustomerID=Customer.CustomerID WHERE Customer.visible=1 AND CustomerOrder.visible=1 GROUP BY Customer.CustomerID")
     customer = result.fetchall()
     return render_template("customerorders.html", customer=customer)
     

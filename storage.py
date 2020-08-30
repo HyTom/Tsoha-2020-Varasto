@@ -25,6 +25,8 @@ def poista():
     db.session.execute(sql, {"itemid":itemid})
     sql = "UPDATE ArrivedItems SET visible=0 WHERE ItemID=:itemid";
     db.session.execute(sql, {"itemid":itemid})
+    sql = "UPDATE CustomerOrder SET visible=0 WHERE ItemID=:itemid";
+    db.session.execute(sql, {"itemid":itemid})
     db.session.commit()
     return redirect("/roskiin")
     
