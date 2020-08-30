@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<a href="/">
+<img src="../static/images/logo.png" alt="Paras työpaikka">
+</a>
+
+<p> Saapuneet tilaukset. </p>
+<p> Vastaanota tilauksia: </p>
+
+{% for arrived in arrived %}
+{{ arrived[1] }} , saapunut {{ arrived[2] }}kpl
+<form action="/saapuneetvastaanota" method="POST">
+<input type="hidden" id="arrivalid" name="arrivalid" value={{ arrived[0] }}>
+<input type="hidden" id="itemname" name="itemname" value={{ arrived[1] }}>
+<input type="hidden" id="quantity" name="quantity" value={{ arrived[2] }}>
+<input type="submit" value="Vastaanota tilaus">
+</form>
+<hr>
+{% endfor %}
+
+
+
+<p> - </p>
+<a href="/varasto">Takaisin</a>
+<p> - </p>
+<a href="/">Etusivulle</a>

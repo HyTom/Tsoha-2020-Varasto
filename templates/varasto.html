@@ -6,13 +6,21 @@
 Erilaisia tavararoita: {{ count }}
 <hr>
 
-{% for tavara in tavara %}
-{{ tavara[1] }} , varastossa {{ tavara[2] }}kpl
+{% for item in item %}
+{{ item[1] }} , varastossa {{ item[2] }}kpl
 <hr>
 {% endfor %}
 
-<a href="/taydennys">Täydennä varastoa</a>
+<p> - </p>
+<a href="/taydennys">Täydennä varastoa tilaamalla tuotetta</a>
+<p> - </p>
+<a href="/saapuneet">Vastaanota saapuneita varaston täydennyksiä</a>
+<p> (Saapuneita täydennyksiä: {{ arrived }})  </p>
 <p> - </p>
 <a href="/new">Kokonaan uusi tuote</a>
+<p> - </p>
+<a href="/customerorders">Käsittele asiakkaiden tilauksia</a>
+<p> - </p>
+<a href="/roskiin">Poista tuote varastosta</a>
 <p> - </p>
 <a href="/">Etusivulle</a>

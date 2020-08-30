@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<a href="/">
+<img src="../static/images/logo.png" alt="Paras työpaikka">
+</a>
+Asiakkaat:
+<hr>
+{% for customer in customer %}
+{{ customer[1] }} , tilauksia {{ customer[2] - 1 }}kpl
+<hr>
+{% endfor %}
+
+<p> Valitse: </p>
+<a href="/newcustomerorder">Tee uusi asiakkaan tilaus</a>
+<p> TAI </p>
+<a href="/customersendorder">Lähetä asiakkalle tilaus</a>
+<p> TAI </p>
+<a href="/newcustomer">Lisää tai poista asiakas</a>
+<p> - </p>
+<a href="/varasto">Takaisin</a>
+<p> - </p>
+<a href="/">Etusivulle</a>

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<a href="/">
+<img src="../static/images/logo.png" alt="Paras työpaikka">
+</a>
+
+<p> Käsittele asiakkaan tilaus. Jos tuotetta ei ole varastossa tarpeeksi tilauksen täyttämiseksi, lähetetään mitä varastossa on. </p>
+{% for orders in orders %}
+Tilaaja: {{ orders[1] }} , tilattu {{ orders[4] }} {{ orders[3] }}kpl (varastossa {{ orders[5] }}kpl)
+<form action="/sendcustomersendorder" method="POST">
+<input type="hidden" id="orderid" name="orderid" value={{ orders[0] }}>
+<input type="hidden" id="orderquantity" name="orderquantity" value={{ orders[3] }}>
+<input type="hidden" id="itemid" name="itemid" value={{ orders[2] }}>
+<input type="hidden" id="quantity" name="quantity" value={{ orders[5] }}>
+<input type="submit" value="Lähetä tilaus">
+</form>
+<hr>
+{% endfor %}
+
+
+<p> - </p>
+<a href="/customerorders">Takaisin</a>
+<p> - </p>
+<a href="/">Etusivulle</a>

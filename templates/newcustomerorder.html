@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<a href="/">
+<img src="../static/images/logo.png" alt="Paras työpaikka">
+</a>
+
+<p> Lisää asiakkaalle uusi tuote tilaus. </p>
+
+{% for customer in customer %}
+<form action="/sendnewcustomerorder" method="POST">
+<p> Asiakas: {{ customer[1] }}. </p>
+<label for="name">Valitse tuote:</label>
+<select id="name" name="name">
+  {% for item in item %}
+    <option value={{ item[1] }}>{{ item[1] }}</option>
+  {% endfor %}
+</select>
+<input type="hidden" id="customer" name="customer" value={{ customer[0] }}>
+  <label for="quantity">Valitse maara (1 - 9999):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="9999">
+  <input type="submit" value="Uusi tilaus">
+</form>
+{% endfor %}
+
+<p> - </p>
+<a href="/customerorders">Takaisin</a>
+<p> - </p>
+<a href="/">Etusivulle</a>

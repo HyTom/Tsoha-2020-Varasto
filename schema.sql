@@ -1,2 +1,7 @@
-CREATE TABLE users (id SERIAL PRIMARY KEY, username TEXT, password TEXT, position TEXT);
-CREATE TABLE tavaratesti (id SERIAL PRIMARY KEY, nimi TEXT, maara INTEGER);
+CREATE TABLE Items (ItemID SERIAL PRIMARY KEY, name TEXT, quantity INTEGER, visible INTEGER);
+
+CREATE TABLE ArrivedItems (ArrivedID SERIAL PRIMARY KEY, ItemID INTEGER REFERENCES Items, quantity INTEGER, visible INTEGER);
+
+CREATE TABLE Customer (CustomerID SERIAL PRIMARY KEY, name TEXT, visible INTEGER);
+
+CREATE TABLE CustomerOrder (CustomerOrderID SERIAL PRIMARY KEY, CustomerID INTEGER REFERENCES Customer, ItemID INTEGER REFERENCES Items, quantity INTEGER, visible INTEGER);
