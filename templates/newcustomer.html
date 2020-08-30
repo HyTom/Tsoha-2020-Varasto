@@ -3,7 +3,7 @@
 <img src="../static/images/logo.png" alt="Paras työpaikka">
 </a>
 
-<p> Lisää uusi asiakas järjestelmään. </p>
+<p> Lisää uusi asiakas järjestelmään: </p>
 
 <form action="/sendnewcustomer" method="POST">
 Nimi: <br>
@@ -11,6 +11,18 @@ Nimi: <br>
 <br>
 <input type="submit" value="Lisää asiakas">
 </form>
+
+<p> Tai poista asiakas järjestelmästä: </p>
+
+{% for customer in customer %}
+<form action="/sendcustomeraway" method="POST">
+<p></p>
+Asiakas: {{ customer[1] }}<br>
+<input type="hidden" id="customerid" name="customerid" value={{ customer[0] }}>
+<input type="submit" value="Poista">
+</form>
+<hr>
+{% endfor %}
 
 <p> - </p>
 <a href="/customerorders">Takaisin</a>

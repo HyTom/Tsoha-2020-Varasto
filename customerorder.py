@@ -64,7 +64,18 @@ def sendcustomersendorder():
     
 @app.route("/newcustomer")
 def newcustomer():
-    return render_template("newcustomer.html")
+    result = db.session.execute("SELECT * FROM Customer WHERE visible=1")
+    customer = result.fetchall()
+    return render_template("newcustomer.html", customer=customer)
+
+@app.route("/sendcustomeraway", methods=["POST"])
+def sendcustomeraway():
+    customerid = request.form["customerid"]
+    sql = "UPDATE Customer SET visible=0 WHERE CustomerID=:customerid";
+    db.session.execute(sql, {"customerid":customerid})
+    db.session.commit()
+    return redirect("/newcustomer")
+
 
 @app.route("/sendnewcustomer", methods=["POST"])
 def sendnewcustomer():
@@ -77,4 +88,4 @@ def sendnewcustomer():
     sql = "INSERT INTO CustomerOrder (CustomerID, quantity, visible) VALUES (:customerID, '0', '1')" 
     db.session.execute(sql, {"customerID":customerID[0]})
     db.session.commit()
-    return redirect("/customerorders")
+    return redirect("/newcustomer")

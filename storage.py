@@ -32,7 +32,7 @@ def poista():
     
 @app.route("/taydennys")
 def taydennys():
-    result = db.session.execute("SELECT Items.ItemID, Items.name, Items.quantity, COUNT(ArrivedItems.ItemID),  SUM(ArrivedItems.quantity) FROM Items INNER JOIN ArrivedItems ON ArrivedItems.ItemID=Items.ItemID WHERE Items.visible=1 GROUP BY Items.ItemID")
+    result = db.session.execute("SELECT Items.ItemID, Items.name, Items.quantity, COUNT(ArrivedItems.ItemID), SUM(ArrivedItems.quantity) FROM Items INNER JOIN ArrivedItems ON ArrivedItems.ItemID=Items.ItemID WHERE Items.visible=1 GROUP BY Items.ItemID")
     item = result.fetchall()
     return render_template("taydennys.html", item=item)
 
