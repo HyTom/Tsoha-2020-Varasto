@@ -3,9 +3,9 @@ Tsoha-2020 loppukesän tietokantasovellus harjoitustyö
 
 # Varastosovellus
 
-Kuvitteellisen yrityksen sovellus jossa pidetään yllä tietoa siitä, mitä tavaraa yrityksellä löytyy varastosta ja mistä sen voisi löytää.
+Kuvitteellisen yrityksen sovellus jossa pidetään yllä tietoa siitä, mitä tavaraa yrityksellä löytyy varastosta ja kuka sitä haluaa.
 
-Varasto on yksityisyrittäjälle tarkoitettu sovellus, joten käyttäjää ei voi luoda.
+Varasto on kuvitteellisen yksityisyrityksen omistajalle tarkoitettu sovellus, joten käyttäjää ei voi luoda.
 Alla testausta varten tunnukset.
 
 Tunnus: asd
@@ -13,11 +13,28 @@ Salasana: asd
 
 Linkki: https://tsoha-varasto.herokuapp.com/
 
+Mitä voit tehdä:
+* Lisää varastoon uusi tuote
+* Sitten voit tilata tätä uutta tuotetta niin paljon kuin haluat, joka kerta syntyy uusi tilaus.
+* Nykyhetken sovelluksessa tuotteet saapuvat välittömästi.
+* Käy keräämässä saapuneet tuotteet
+* Käy käsittelemässä asiakkaita
+* Voit luoda uuden asiakkaan
+* Sitten voit kirjata ylös asiakkaan tilauksen
+* Lopuksi voit lähettää tilauksen asiakkaalle.
+* Voit poistaa asiakkaat ja esineet jos ja kun kyllästyt.
 
-# Välipalautus 3 tilanne
-Paljon tuli sählättyä mutta ainakin sovellus toimii.
-Käyttäjillä ei ole vielä eroja ja tuotteita ei ole vielä missään varastossa nje.
-Nyt alan työntämään sisään niin paljon tauluja ja ominaisuuksia kuin pystyn.
+
+# Lopullinen palautus
+Lisäsin niin paljon asioita sovellukseen kun pystyin. Jotain ominaisuuksia ei saatu mukaan.
+Sivun ulkoasussa on parantamisen varaa. 
+Muutamia bugeja myös on, esim sovellus ei tykkää siitä että lisäät samannimisiä asiakkaita tai esineitä uudestaan sen jälkeen kun olet ne poistanut.
+Myös samannimisiä asiakkaita ja tuotteita voi vielä lisätä, myös tyhjiä nimiä.
+Datet olisi ollut kiva lisätä taulukoihin.
+Yritin korjata suomea englanniksi niin paljon kuin kerkesin, mutta metodit ja tiedostonimet osittain jäivät suomeksi.
+Mutta ottaen huomioon miltä sovellus viikonalussa näytti, olen tyytyväinen.
+
+
 
 ## Ominaisuuksia:
 * Voi etsiä tavaraa.
